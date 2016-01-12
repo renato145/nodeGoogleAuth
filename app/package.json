@@ -1,0 +1,26 @@
+{
+  "name": "js_psych_node_web_app",
+  "version": "0.0.0",
+  "description": "jsPsych on Node",
+  "author": "Renato Hermoza <rhermoza145@gmail.com>",
+  "private": true,
+  "scripts": {
+    "start": "nodemon -L app/bin/www"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "*",
+    "body-parser": "~1.0.0",
+    "connect-flash": "*",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "ejs": "^2.3.4",
+    "express": "~4.2.0",
+    "express-session": "~1.0.4",
+    "mongoose": "~3.8.12",
+    "morgan": "~1.0.0",
+    "passport": "~0.2.0",
+    "passport-local": "~1.0.0",
+    "passport-google-oauth2": "~0.1.6",
+    "static-favicon": "~1.0.0"
+  }
+}
