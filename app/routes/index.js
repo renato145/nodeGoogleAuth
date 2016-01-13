@@ -8,21 +8,21 @@ var isAuthenticated = function (req, res, next) {
 	if (req.isAuthenticated())
 		return next();
 	// if the user is not authenticated then redirect him to the login page
-	res.redirect('/');
+	res.redirect('/login');
 }
 
 module.exports = function(passport){
 
 	/* GET login page. */
-	router.get('/', function(req, res) {
+	router.get('/login', function(req, res) {
     	// Display the Login page with any flash message, if any
-		res.render('index', { message: req.flash('message') });
+		res.render('login', { message: req.flash('message') });
 	});
 
 	/* Handle Login POST */
-	router.post('/login', passport.authenticate('login', {
-		successRedirect: '/profile',
-		failureRedirect: '/',
+	router.post('/signin', passport.authenticate('login', {
+		successRedirect: '/',
+		failureRedirect: '/login',
 		failureFlash : true  
 	}));
 
@@ -39,8 +39,8 @@ module.exports = function(passport){
 	}));
 
 	/* GET Home Page */
-	router.get('/home', isAuthenticated, function(req, res){
-		res.render('home', { user: req.user });
+	router.get('/', isAuthenticated, function(req, res){
+		res.render('index', { user: req.user });
 	});
 
 	/* GET Profile Page */
@@ -65,8 +65,8 @@ module.exports = function(passport){
     // the callback after google has authenticated the user
     router.get('/auth/google/callback',
             passport.authenticate('loging', {
-                    successRedirect : '/profile',
-                    failureRedirect : '/'
+                    successRedirect : '/',
+                    failureRedirect : '/login'
             }));
 
 	return router;

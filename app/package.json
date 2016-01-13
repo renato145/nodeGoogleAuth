@@ -1,7 +1,7 @@
 {
-  "name": "node_web_app",
+  "name": "js_psych_node_web_app",
   "version": "0.0.0",
-  "description": "node google passport",
+  "description": "jsPsych on Node",
   "author": "Renato Hermoza <rhermoza145@gmail.com>",
   "private": true,
   "scripts": {

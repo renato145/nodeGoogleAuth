@@ -1,4 +1,4 @@
-node:
+jspsych-node:
   build: .
   links:
     - mongo
@@ -6,5 +6,6 @@ node:
    - ./app:/usr/src/app
   ports:
    - "3000:3000"
+  container_name: jspsych-node
 mongo:
   image: mongo
